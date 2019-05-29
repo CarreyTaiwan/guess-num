@@ -4,17 +4,22 @@
 # 猜錯的話 要告註他 比答案大/小
 
 import random
-r = random.randint(1, 100)
-i = 0
+start = input('請輸入隨機數字範圍開始值')
+start = int(start)
+end = input('請輸入隨機數字範圍結束值')
+end = int(end)
+r = random.randint(start, end)
+count = 0
 while True:
 	num = input('請猜一數字: ')
-	i = i + 1
+	count += 1
 	num = int(num)
 	if  r == num:
 		print('終於猜對了!')
+		print('總共猜了', count ,'次')
 		break
 	elif num > r:
 		print('比答案大')
 	else:
 		print('比答案小')
-print('總共猜了', i ,'次')
+	print('總共猜了', count ,'次')
